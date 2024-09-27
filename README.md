@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./assets/710x370.png" alt="Opencart Send Custom Mail" />
+  <img src="./assets/1280x640.png" alt="Opencart Send Custom Mail" />
   &#xa0;
 </div>
 
