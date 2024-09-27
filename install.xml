@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Send custom mail</name>
+    <code>send_custom_mail</code>
+    <version>1.0</version>
+    <author>And</author>
+    <link>https://github.com/and-ri/opencart-send-custom-mail</link>
+    <file path="admin/controller/common/column_left.php">
+        <operation>
+            <search><![CDATA[if ($marketing) {]]></search>
+            <add position="before"><![CDATA[
+        if ($this->user->hasPermission('access', 'marketing/sendmail')) {
+			$marketing[] = array(
+				'name'	   => $this->language->get('text_sendmail'),
+				'href'     => $this->url->link('marketing/sendmail', 'user_token=' . $this->session->data['user_token'], true),
+				'children' => array()
+			);
+		}
+      ]]>            </add>
+        </operation>
+    </file>
+    <file path="admin/language/en-gb/common/column_left.php">
+        <operation error="skip">
+            <search><![CDATA[<?php]]></search>
+            <add position="after"><![CDATA[$_['text_sendmail'] = 'Send custom mail';]]></add>
+        </operation>
+    </file>
+    <file path="admin/language/uk-ua/common/column_left.php">
+        <operation error="skip">
+            <search><![CDATA[<?php]]></search>
+            <add position="after"><![CDATA[$_['text_sendmail'] = 'Відправити повідомлення';]]></add>
+        </operation>
+    </file>
+    <file path="admin/language/ru-ru/common/column_left.php">
+        <operation error="skip">
+            <search><![CDATA[<?php]]></search>
+            <add position="after"><![CDATA[$_['text_sendmail'] = 'Отправить сообщение';]]></add>
+        </operation>
+    </file>
+</modification>
