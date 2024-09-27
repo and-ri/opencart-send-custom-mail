@@ -8,4 +8,4 @@ mkdir -p ./dist
 rm -f ./dist/$name-$version.ocmod.zip
 
 # create new zip file
-zip -r ./dist/$name-$version.ocmod.zip ./upload ./install.xml
+zip -r ./dist/$name-$version.ocmod.zip ./upload ./install.xml ./install.php
